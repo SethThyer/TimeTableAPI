@@ -1,0 +1,25 @@
+{
+  "name": "timtableapi",
+  "version": "1.0.0",
+  "description": "A CRUD API that serves data from a MongoDB database.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SethThyer/TimeTableAPI.git"
+  },
+  "author": "SethThyer",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SethThyer/TimeTableAPI/issues"
+  },
+  "homepage": "https://github.com/SethThyer/TimeTableAPI#readme",
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.12.14",
+    "nodemon": "^2.0.11"
+  }
+}
