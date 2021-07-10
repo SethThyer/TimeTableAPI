@@ -2,10 +2,9 @@ require('dotenv').config();
 const express = require('express');
 const app = express();
 const Classes = require('./models/day'); 
-
 const mongoose = require('mongoose');
-//const uri = "mongodb+srv://Seth:BlackFriday2015@cluster0.cttel.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
-const uri = "mongodb://localhost:27017/test";
+
+const uri = process.env.NOTYETSTAGED || "mongodb://localhost:27017/test";
 const port = process.env.PORT || 3000;
 
 mongoose.connect(uri, {useNewUrlParser: true, useUnifiedTopology: true});
