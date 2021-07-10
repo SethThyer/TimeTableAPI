@@ -6,7 +6,8 @@ const Classes = require('./models/day');
 const mongoose = require('mongoose');
 //const uri = "mongodb+srv://Seth:BlackFriday2015@cluster0.cttel.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
 const uri = "mongodb://localhost:27017/test";
-console.log(process.env.URI)
+const port = process.env.PORT || 3000;
+
 mongoose.connect(uri, {useNewUrlParser: true, useUnifiedTopology: true});
 const db = mongoose.connection;
 
@@ -56,4 +57,4 @@ app.put('/', async(req, res) => {
 });
 
 
-app.listen(3000);
+app.listen(port);
