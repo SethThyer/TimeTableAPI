@@ -7,7 +7,13 @@ const mongoose = require('mongoose');
 const uri = process.env.URI || "mongodb://localhost:27017/test";
 const port = process.env.PORT || 3000;
 
-mongoose.connect(uri, {useNewUrlParser: true, useUnifiedTopology: true});
+
+mongoose.connect(uri, {useNewUrlParser: true, useUnifiedTopology: true}, (err) => {
+  if (err) {
+    console.log("failed to connect");
+  }
+});
+
 const db = mongoose.connection;
 
 db.on('error', console.error.bind(console, 'connection error:'));
@@ -29,6 +35,7 @@ app.get('/find/:weekIndex/:dayIndex', async(req, res) => {
 
   if(doc == null) doc = 'No Matching Document Found';
 
+  res.header('Access-Control-Allow-Origin', 'http://localhost:3000') // Stop site from blocking. relates to CORS
   res.send(doc);
 });
 
